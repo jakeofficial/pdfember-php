@@ -1,0 +1,53 @@
+{
+    "name": "pdfember/pdfember-php",
+    "description": "PHP client for the pdfember API: HTML and URLs to PDF with smart page breaks, plus 19 PDF tools. Works anywhere, with a Laravel service provider and facade.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["pdf", "html to pdf", "html-to-pdf", "pdf api", "merge pdf", "split pdf", "watermark", "laravel", "pdfember"],
+    "homepage": "https://pdfember.com",
+    "support": {
+        "docs": "https://pdfember.com/docs",
+        "issues": "https://github.com/jakeofficial/pdfember-php/issues",
+        "source": "https://github.com/jakeofficial/pdfember-php"
+    },
+    "require": {
+        "php": "^8.1",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+        "phpunit/phpunit": "^10.5 || ^11.0 || ^12.0"
+    },
+    "suggest": {
+        "laravel/framework": "Registers the Pdfember facade, the config file and download responses automatically (10.x to 13.x)."
+    },
+    "autoload": {
+        "psr-4": {
+            "Pdfember\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pdfember\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pdfember\\Laravel\\PdfemberServiceProvider"
+            ],
+            "aliases": {
+                "Pdfember": "Pdfember\\Laravel\\Facades\\Pdfember"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
